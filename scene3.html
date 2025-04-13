@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>final page</title>
+        <link rel="stylesheet" href="scene3.css" />
+    </head>
+  <body>
+    <div id="top-section">
+      <h1 id="title">HAPPY BIRTHDAY BENNY</h1>
+      <button id="magic-button">BUTTON</button>
+    </div>
+    <p id="subtitle">turn on sound before pressing the button</p>
+    <video id="center-video" src="./dancer.mp4" autoplay muted loop playsinline style="display: none;"></video>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+      const button = document.getElementById('magic-button');
+      const sound = new Audio('./sounds/sound.mp3');
+      let isPlaying = false;
+
+      button.addEventListener('click', () => {
+        sound.pause();
+        sound.currentTime = 0;
+        isPlaying = false;
+        document.getElementById('center-video').style.display = 'none';
+
+        if (!isPlaying) {
+          sound.play();
+          isPlaying = true;
+
+          document.getElementById('center-video').style.display = 'block';
+
+          const duration = 3 * 1000;
+          const end = Date.now() + duration;
+
+          (function frame() {
+              confetti({
+                particleCount: 40,
+                spread: 120,
+                origin: { y: 0.6 },
+                colors: ['#ff66cc', '#ffcc00', '#66ffcc', '#99ccff', '#ffffff'],
+                shapes: ['circle'],
+                scalar: 1.5
+              });
+
+            if (Date.now() < end && isPlaying) {
+              requestAnimationFrame(frame);
+            }
+          })();
+
+          sound.onended = () => {
+            isPlaying = false;
+            document.getElementById('center-video').style.display = 'none';
+          };
+        }
+      });
+    </script>
+  </body>
+</html>

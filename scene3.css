@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: rgb(62, 47, 175);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1000px; 
+    font-family: sans-serif;
+}
+  
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+#magic-button {
+  width: 90px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #ff8ec4);
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.7), inset 0 0 10px #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+  z-index: 12;
+  transform: none;
+  position: relative;
+}
+
+#magic-button:hover {
+  transform: scale(1.1) rotate(7deg);
+  background: radial-gradient(circle at 70% 70%, #ff8ec4, #ffffff);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 100, 200, 0.6);
+  color: #ff00cc;
+  text-shadow: 0 0 5px #ffccff;
+}
+
+#title {
+  font-size: 2.5rem;
+  color: white;
+  z-index: 11; 
+  text-shadow: 0 0 10px #ff8ec4;
+  font-family: 'Comic Sans MS', cursive, sans-serif; 
+}
+
+#subtitle {
+  font-size: 2rem;
+  color: #ffeeff;
+  z-index: 14;
+  font-style: italic;
+  text-shadow: 0 0 5px #ffccff;
+  font-family: 'Courier New', monospace;
+  margin-left: 1rem;
+}
+
+#top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+  gap: 1rem;
+}

@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: monospace;
+    background: rgb(28, 53, 165);
+    color: rgb(166, 239, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #maze-ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  #room-visual {
+    width: 60vw;
+    height: 30vh;
+    background: radial-gradient(circle, #06b337, #eca1a1);
+    border: 2px solid #ffaeae;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1em;
+  }
+  
+  #nav-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #122190;
+    color: rgb(255, 186, 186);
+    border: 1px solid #666;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #be7878;
+  }
+  
+  #minimap-title {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  #minimap {
+    display: grid;
+    grid-template-columns: repeat(5, 20px);
+    grid-template-rows: repeat(5, 20px);
+    gap: 2px;
+  }
+  
+  .minimap-cell {
+    width: 20px;
+    height: 20px;
+    background: #302170;
+    border: 1px solid #861818;
+  }
+  
+  .minimap-cell.visited {
+    background: #57c2a5;
+  }
+  
+  .minimap-cell.current {
+    background: rgb(239, 255, 67);
+  }
